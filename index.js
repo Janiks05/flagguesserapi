@@ -1,4 +1,4 @@
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 8000
 const express = require('express')
 const app = express()
 const cors = require('cors')
@@ -7,9 +7,6 @@ app.use(cors({
     origin: '*'
 }))
 
-app.get("/", (req, res) => {
-    console.log(`Server running on Port ${PORT}`)
-})
 
 const flags = [
     {
@@ -273,4 +270,5 @@ app.get("/easyflags", (req, res) => {
     )
 })
 
-app.listen(PORT)
+app.listen(PORT, () => console.log(`Running on PORT: ${PORT}`))
+
